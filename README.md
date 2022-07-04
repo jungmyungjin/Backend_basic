@@ -1,2 +1,2 @@
 # Backends-
-'Choi Yeongjun'의 백엔드 기초
+'moai's 백엔드 기초
