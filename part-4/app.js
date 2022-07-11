@@ -6,6 +6,41 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+// Try2 : Express Router 사용 (피드백 반영)
+app.get("/:num1/plus/:num2", (req, res) => {
+  const { num1, num2 } = req.params;
+  const result = parseFloat(num1) + parseFloat(num2);
+  res.send(
+    "result is " + Math.round((result + Number.EPSILON) * 100) / 100 + "!"
+  );
+});
+
+app.get("/:num1/minus/:num2", (req, res) => {
+  const { num1, num2 } = req.params;
+  const result = parseFloat(num1) - parseFloat(num2);
+  res.send(
+    "result is " + Math.round((result + Number.EPSILON) * 100) / 100 + "!"
+  );
+});
+
+app.get("/:num1/mul/:num2", (req, res) => {
+  const { num1, num2 } = req.params;
+  const result = parseFloat(num1) * parseFloat(num2);
+  res.send(
+    "result is " + Math.round((result + Number.EPSILON) * 100) / 100 + "!"
+  );
+});
+
+app.get("/:num1/div/:num2", (req, res) => {
+  const { num1, num2 } = req.params;
+  const result = parseFloat(num1) / parseFloat(num2);
+  res.send(
+    "result is " + Math.round((result + Number.EPSILON) * 100) / 100 + "!"
+  );
+});
+
+// Try 1 : Regex를 사용해서 풀기
+/*
 const plusRegex = /\/([0-9]+(?:.[0-9]+)?)\/plus\/([0-9]+(?:.[0-9]+)?)$/i;
 app.get(plusRegex, (req, res) => {
   const params = req.params;
@@ -35,6 +70,7 @@ app.get(divRegex, (req, res) => {
     "result is " + Math.round((result + Number.EPSILON) * 100) / 100 + "!"
   );
 });
+*/
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
