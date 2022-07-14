@@ -17,7 +17,7 @@ app.get("/:num1/plus/:num2", (req, res) => {
       "result is " + Math.round((result + Number.EPSILON) * 100) / 100 + "!"
     );
   } catch (e) {
-    res.send(e.message);
+    res.send(e.message, 400);
   } finally {
     console.log("Good Bye~!!!");
   }
@@ -34,7 +34,7 @@ app.get("/:num1/minus/:num2", (req, res) => {
       "result is " + Math.round((result + Number.EPSILON) * 100) / 100 + "!"
     );
   } catch (e) {
-    res.send(e.message);
+    res.send(e.message, 400);
   } finally {
     console.log("Good Bye~!!!");
   }
@@ -51,7 +51,7 @@ app.get("/:num1/mul/:num2", (req, res) => {
       "result is " + Math.round((result + Number.EPSILON) * 100) / 100 + "!"
     );
   } catch (e) {
-    res.send(e.message);
+    res.send(e.message, 400);
   } finally {
     console.log("Good Bye~!!!");
   }
@@ -68,7 +68,7 @@ app.get("/:num1/div/:num2", (req, res) => {
       "result is " + Math.round((result + Number.EPSILON) * 100) / 100 + "!"
     );
   } catch (e) {
-    res.send(e.message);
+    res.send(e.message, 400);
   } finally {
     console.log("Good Bye~!!!");
   }
