@@ -1,0 +1,11 @@
+CREATE USER IF NOT EXISTS root@localhost IDENTIFIED BY 'p@ssword';
+SET PASSWORD FOR root@localhost = PASSWORD('p@ssword');
+GRANT ALL ON *.* TO root@localhost WITH GRANT OPTION;
+CREATE USER IF NOT EXISTS root@'%' IDENTIFIED BY 'p@ssword';
+SET PASSWORD FOR root@'%' = PASSWORD('p@ssword');
+GRANT ALL ON *.* TO root@'%' WITH GRANT OPTION;
+CREATE USER IF NOT EXISTS mj@'%' IDENTIFIED BY 'p@ssword';
+SET PASSWORD FOR mj@'%' = PASSWORD('p@ssword');
+CREATE DATABASE IF NOT EXISTS mjdb;
+GRANT ALL ON mjdb.* TO mj@'%';
+FLUSH PRIVILEGES;
